@@ -1,7 +1,0 @@
-@import "variables";
-
-@each $name, $value in $displays {
-  .#{$name} {
-    display: $value;
-  }
-}

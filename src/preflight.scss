@@ -1,0 +1,77 @@
+@import "variables";
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+*:focus {
+  outline-color: transparent;
+}
+
+// Remove default margins
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+// Unstyled headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+// Unstyled list
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// Media element are block
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+}
+
+// Reset border style
+*,
+:after,
+:before {
+  border-width: 0;
+  border-style: solid;
+  border-color: map-get($colors, "grey-light");
+}
+
+// Unstyle link
+a {
+  text-decoration: none;
+}

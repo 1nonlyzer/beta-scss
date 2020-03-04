@@ -1,0 +1,17 @@
+@import "variables";
+
+@each $name, $value in $text-aligns {
+  .text\:#{$name} {
+    text-align: $value;
+  }
+}
+
+@each $bpName, $bpValue in $breakpoints {
+  @each $name, $value in $text-aligns {
+    @media (min-width: #{$bpValue}) {
+      .#{$bpName}\:text\:#{$name} {
+        text-align: $value;
+      }
+    }
+  }
+}

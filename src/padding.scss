@@ -1,0 +1,69 @@
+@import "variables";
+
+@each $name, $value in $paddings {
+  .p\:#{$name} {
+    padding: $value;
+  }
+  .pt\:#{$name} {
+    padding-top: $value;
+  }
+  .pr\:#{$name} {
+    padding-right: $value;
+  }
+  .pb\:#{$name} {
+    padding-bottom: $value;
+  }
+  .pl\:#{$name} {
+    padding-left: $value;
+  }
+  .px\:#{$name} {
+    padding-left: $value;
+    padding-right: $value;
+  }
+  .py\:#{$name} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+}
+
+@each $bpName, $bpValue in $breakpoints {
+  @each $name, $value in $paddings {
+    .#{$bpName}\:p\:#{$name} {
+      @media (min-width: #{$bpValue}) {
+        padding: $value;
+      }
+    }
+    .#{$bpName}\:pt\:#{$name} {
+      @media (min-width: #{$bpValue}) {
+        padding-top: $value;
+      }
+    }
+    .#{$bpName}\:pr\:#{$name} {
+      @media (min-width: #{$bpValue}) {
+        padding-right: $value;
+      }
+    }
+    .#{$bpName}\:pb\:#{$name} {
+      @media (min-width: #{$bpValue}) {
+        padding-bottom: $value;
+      }
+    }
+    .#{$bpName}\:pl\:#{$name} {
+      @media (min-width: #{$bpValue}) {
+        padding-left: $value;
+      }
+    }
+    .#{$bpName}\:px\:#{$name} {
+      @media (min-width: #{$bpValue}) {
+        padding-left: $value;
+        padding-right: $value;
+      }
+    }
+    .#{$bpName}\:py\:#{$name} {
+      @media (min-width: #{$bpValue}) {
+        padding-top: $value;
+        padding-bottom: $value;
+      }
+    }
+  }
+}

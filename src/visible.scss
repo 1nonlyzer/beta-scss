@@ -1,0 +1,17 @@
+@import "variables";
+
+@each $name, $value in $visibles {
+  .#{$name} {
+    visibility: $value;
+  }
+}
+
+@each $bpName, $bpValue in $breakpoints {
+  @each $name, $value in $visibles {
+    @media (min-width: #{$bpValue}) {
+      .#{$bpName}\:#{$name} {
+        visibility: $value;
+      }
+    }
+  }
+}

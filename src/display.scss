@@ -1,0 +1,17 @@
+@import "variables";
+
+@each $name, $value in $displays {
+  .#{$name} {
+    display: $value;
+  }
+}
+
+@each $bpName, $bpValue in $breakpoints {
+  @each $name, $value in $displays {
+    @media (min-width: #{$bpValue}) {
+      .#{$bpName}\:#{$name} {
+        display: $value;
+      }
+    }
+  }
+}

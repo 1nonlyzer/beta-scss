@@ -1,0 +1,96 @@
+@import "variables";
+
+// ie : min-w:0
+@each $name, $value in $widths {
+  .w\:#{$name} {
+    width: $value;
+  }
+  .min-w\:#{$name} {
+    min-width: $value;
+  }
+  .max-w\:#{$name} {
+    max-width: $value;
+  }
+}
+
+// ie : max-w:sm
+@each $name, $value in $breakpoints {
+  .w\:#{$name} {
+    width: $value;
+  }
+  .min-w\:#{$name} {
+    min-width: $value;
+  }
+  .max-w\:#{$name} {
+    max-width: $value;
+  }
+}
+
+// ie: w:2/12
+@each $name, $value in $twelve-columns {
+  .w\:#{$name} {
+    width: $value;
+  }
+  .min-w\:#{$name} {
+    min-width: $value;
+  }
+  .max-w\:#{$name} {
+    max-width: $value;
+  }
+}
+
+@each $bpName, $bpValue in $breakpoints {
+  @each $name, $value in $widths {
+    .#{$bpName}\:w\:#{$name} {
+      @media (min-width: #{$bpValue}) {
+        width: $value;
+      }
+    }
+    .#{$bpName}\:min-w\:#{$name} {
+      @media (min-width: #{$bpValue}) {
+        min-width: $value;
+      }
+    }
+    .#{$bpName}\:max-w\:#{$name} {
+      @media (min-width: #{$bpValue}) {
+        max-width: $value;
+      }
+    }
+  }
+
+  @each $name, $value in $breakpoints {
+    .#{$bpName}\:w\:#{$name} {
+      @media (min-width: #{$bpValue}) {
+        width: $value;
+      }
+    }
+    .#{$bpName}\:min-w\:#{$name} {
+      @media (min-width: #{$bpValue}) {
+        min-width: $value;
+      }
+    }
+    .#{$bpName}\:max-w\:#{$name} {
+      @media (min-width: #{$bpValue}) {
+        max-width: $value;
+      }
+    }
+  }
+
+  @each $name, $value in $twelve-columns {
+    .#{$bpName}\:w\:#{$name} {
+      @media (min-width: #{$bpValue}) {
+        width: $value;
+      }
+    }
+    .#{$bpName}\:min-w\:#{$name} {
+      @media (min-width: #{$bpValue}) {
+        min-width: $value;
+      }
+    }
+    .#{$bpName}\:max-w\:#{$name} {
+      @media (min-width: #{$bpValue}) {
+        max-width: $value;
+      }
+    }
+  }
+}

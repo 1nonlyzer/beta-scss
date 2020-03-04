@@ -1,7 +1,0 @@
-@import "variables";
-
-@each $name, $value in $text-aligns {
-  .text\:#{$name} {
-    text-align: $value;
-  }
-}

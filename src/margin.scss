@@ -1,0 +1,69 @@
+@import "variables";
+
+@each $name, $value in $margins {
+  .m\:#{$name} {
+    margin: $value;
+  }
+  .mt\:#{$name} {
+    margin-top: $value;
+  }
+  .mr\:#{$name} {
+    margin-right: $value;
+  }
+  .mb\:#{$name} {
+    margin-bottom: $value;
+  }
+  .ml\:#{$name} {
+    margin-left: $value;
+  }
+  .mx\:#{$name} {
+    margin-left: $value;
+    margin-right: $value;
+  }
+  .my\:#{$name} {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+}
+
+@each $bpName, $bpValue in $breakpoints {
+  @each $name, $value in $margins {
+    .#{$bpName}\:m\:#{$name} {
+      @media (min-width: #{$bpValue}) {
+        margin: $value;
+      }
+    }
+    .#{$bpName}\:mt\:#{$name} {
+      @media (min-width: #{$bpValue}) {
+        margin-top: $value;
+      }
+    }
+    .#{$bpName}\:mr\:#{$name} {
+      @media (min-width: #{$bpValue}) {
+        margin-right: $value;
+      }
+    }
+    .#{$bpName}\:mb\:#{$name} {
+      @media (min-width: #{$bpValue}) {
+        margin-bottom: $value;
+      }
+    }
+    .#{$bpName}\:ml\:#{$name} {
+      @media (min-width: #{$bpValue}) {
+        margin-left: $value;
+      }
+    }
+    .#{$bpName}\:mx\:#{$name} {
+      @media (min-width: #{$bpValue}) {
+        margin-left: $value;
+        margin-right: $value;
+      }
+    }
+    .#{$bpName}\:my\:#{$name} {
+      @media (min-width: #{$bpValue}) {
+        margin-top: $value;
+        margin-bottom: $value;
+      }
+    }
+  }
+}
